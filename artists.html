@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Előadók</title>
-    <link rel="stylesheet" href="/src/artist.css">
+    <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
     <header>
@@ -13,14 +13,19 @@
             <ul>
                 <li><a href="index.html">Főoldal</a></li>
                 <li><a href="artists.html">Előadók</a></li>
-                <li><a href="login.html">Bejelentkezés</a></li>
+                <li><a href="awards.html">Díjaink</a></li>
+                <li><a href="contact.html">Kapcsolat</a></li>
+                <li><a href="src/login.html">Bejelentkezés</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h2>Előadóink</h2>
-        <ul id="artistList"></ul>
+        <div id="artistCards" class="artist-cards"></div>
     </main>
+    <footer>
+        <p>© 2025 Zenei Kiadó. Minden jog fenntartva.</p>
+    </footer>
     <script src="src/artist.js"></script>
 </body>
 </html>

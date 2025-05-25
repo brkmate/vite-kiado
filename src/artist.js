@@ -6,7 +6,7 @@ async function loadArtists() {
         if (!response.ok) throw new Error("Hiba történt az adatok betöltésekor...");
 
         const data = await response.json();
-        const artistList = document.getElementById("artistList");
+        const artistCards = document.getElementById("artistCards");
 
         const uniqueArtists = {};
         data.forEach(item => {
@@ -16,9 +16,16 @@ async function loadArtists() {
         });
 
         for (const [artist, work] of Object.entries(uniqueArtists)) {
-            const li = document.createElement("li");
-            li.innerHTML = `<strong>${artist}</strong> - ${work}`;
-            artistList.appendChild(li);
+            const card = document.createElement("div");
+            card.classList.add("artist-card");
+
+            card.innerHTML = `
+                <h3>${artist}</h3>
+                <p><strong>Alkotási köre</p>
+                <p>${work}</p>
+            `;
+
+            artistCards.appendChild(card);
         }
     } catch (error) {
         console.error(error);
